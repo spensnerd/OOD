@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function validateData() {
+            let projectName = document.forms["Form"]["projectName"].value;
+            let projectImportance = document.forms["Form"]["projectImportance"].value;
+            let projectTime = document.forms["Form"]["time"].value;
+            let projectBudget = document.forms["Form"]["budget"].value;
+
+            if (projectName == "") {
+                alert("project name must be filled out");
+                return false;
+            }
+            if (projectImportance == "") {
+                alert("project Importance must be filled out");
+                return false;
+            }
+            if (projectTime == "") {
+                alert("Time must be filled out");
+                return false;
+            }
+            if (projectBudget == "") {
+                alert("budget must be filled out");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<form name="Form" method="post" action="SQLServlet" onsubmit="return validateData()">
+    <center>
+        <h2>Form Registration</h2>
+        <table border="1 px">
+            <tr>
+                <td>Project Name</td>
+                <td><input type="text" name="projectName"/></td>
+            </tr>
+            <tr>
+                <td>Project Importance</td>
+                <td>
+                    <select>
+                        <option value="Unknown">0 - Unknown</option>
+                        <option value="Vital">1 - Vital</option>
+                        <option value="Important">2 - Important</option>
+                        <option value="Helpful">3 - Helpful</option>
+                        <option value="Unimportant">4 - Unimportant</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Project Hours</td>
+                <td><input type="number" name="time"/></td>
+            </tr>
+            <tr>
+                <td>Budget:</td>
+                <td><input type="number" name="budget"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="submit"/></td>
+            </tr>
+        </table>
+    </center>
+</form>
+</body>
+</html>

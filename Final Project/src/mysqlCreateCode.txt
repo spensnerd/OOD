@@ -1,0 +1,9 @@
+CREATE TABLE `projects` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `Title` varchar(45) NOT NULL,
+  `Budget` int DEFAULT NULL,
+  `Time` int DEFAULT NULL,
+  `Importance` enum('0 - Unknown','1 - Vital','2 - Important','3 - Helpful','4 - Unimportant') NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
